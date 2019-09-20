@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Question1_3 {
 	
-	// my first attempt, works, seems not too time complex
+	// my first attempt, works, seems not too time complex - 
+	// solution from book turned out to be essentially the same as this, but a little 
+	// more concise
 	public String urlify(String s, int l) {
 		char[] sArr = s.toCharArray();
 		List<Integer> spaceIndexes = new ArrayList<>();

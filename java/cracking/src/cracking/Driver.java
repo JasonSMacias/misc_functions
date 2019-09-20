@@ -6,6 +6,7 @@ public class Driver {
 	private static Question1_1 q1_1 = new Question1_1();
 	private static Question1_2 q1_2 = new Question1_2();
 	private static Question1_3 q1_3 = new Question1_3();
+	private static Question1_4 q1_4 = new Question1_4();
 	
 	public static void main(String[] args) {
 		// Question 1.1
@@ -41,7 +42,16 @@ public class Driver {
 		System.out.println(q1_3.urlify(str7, str7.length()));
 		System.out.println(q1_3.urlify(str8, str8.length()));
 		
-		
+		// Question 1.4
+		System.out.println("-------- Q1.4 ----------");
+		String str9 = "taco cat";
+		String str10 = "at cocat";
+		String str11 = "not a palindrome";
+		String str12 = "Racecar";
+		System.out.println("Testing a palindrome: "+q1_4.isPermutationOfPalindrome(str9));
+		System.out.println("Testing a permutation of a palindrome: "+q1_4.isPermutationOfPalindrome(str10));
+		System.out.println("Testing a non-palindrome: "+q1_4.isPermutationOfPalindrome(str11));
+		System.out.println("Testing a palindrome with capital letter: "+q1_4.isPermutationOfPalindrome(str12));		
 	}
 
 }
