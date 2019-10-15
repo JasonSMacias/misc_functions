@@ -7,6 +7,7 @@ public class Driver {
 	private static Question1_2 q1_2 = new Question1_2();
 	private static Question1_3 q1_3 = new Question1_3();
 	private static Question1_4 q1_4 = new Question1_4();
+	private static Question1_5 q1_5 = new Question1_5();
 	
 	public static void main(String[] args) {
 		// Question 1.1
@@ -51,7 +52,19 @@ public class Driver {
 		System.out.println("Testing a palindrome: "+q1_4.isPermutationOfPalindrome(str9));
 		System.out.println("Testing a permutation of a palindrome: "+q1_4.isPermutationOfPalindrome(str10));
 		System.out.println("Testing a non-palindrome: "+q1_4.isPermutationOfPalindrome(str11));
-		System.out.println("Testing a palindrome with capital letter: "+q1_4.isPermutationOfPalindrome(str12));		
+		System.out.println("Testing a palindrome with capital letter: "+q1_4.isPermutationOfPalindrome(str12));
+		
+		// Question 1.5
+		System.out.println("-------- Q1.5 ----------");
+		System.out.println();
+		String[] arr1 = {"", "j", "jason", "ignatius", "heo", "hex", "heo"};
+		String[] arr2 = {"", "jjjj", "jxasxon", "inatus", "hello", "hello", "hella"};
+		boolean[] expected = {true, false, true, true, true, false, false};
+		for (int i = 0; i < arr1.length; i++) {
+			System.out.print("Testing strings " + i + ", expecting " + expected[i]);
+			System.out.print(":  " + q1_5.oneOrTwoAway(arr1[i], arr2[i]) + "\n");
+			System.out.println(arr1[i] + " - " + arr2[i]);
+		}
 	}
 
 }

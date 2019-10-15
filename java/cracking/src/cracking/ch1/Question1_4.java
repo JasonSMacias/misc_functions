@@ -102,6 +102,35 @@ public class Question1_4 {
 	
 	/* The third book solution is essentially the same, but uses bitwise operators,
 	 * setting up a bit vector, toggling appropriate ones for each instance of a character,
-	 * and checking to make sure not more than one is odd
-	 * I won't include that solution here*/
+	 * and checking to make sure not more than one is odd*/
+	
+	/* 
+	 * boolean isPermutationOfPalindrome(String phrase) {
+	 * 		int bitVector = createBitVector(phrase);
+	 *  	return bitVector == 0 || checkExactlyOneBitSet(bitVector);
+	 * }
+	 * 
+	 *  	// create a bit vector for the string.  For each letter with value i, toggle the
+	 *  	// ith bit.
+	 *  int createBitVector(String phrase) {
+	 *  	int bitVector = 0;
+	 *  	for (char c : phrase.toCharArray()) {
+		 *  	int x = getCharNumber(c);
+		 *  	bitVector = toggle(bitVector, x);
+	 *  	}
+	 *  }
+	 *  
+	 *  	// Toggle the ith bit in the integer.
+	 *  int toggle(int bitVector, int index) {
+	 *  	if (index < 0) return bitVector;
+	 *  	
+	 *  	int mask = 1 << index;
+	 *  	if((bitVector & mask) == 0) {
+	 *  		bitVector |= mask;
+	 *  	}
+	 *  	else {
+	 *  		bitVector &= ~= mask;
+	 *  	}
+	 *  }
+	 * */
 }
