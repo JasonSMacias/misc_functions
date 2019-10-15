@@ -25,7 +25,30 @@ public class Question1_5 {
 			int diff = 0;
 			int charChanges = 0;
 			for (int i = 0; i < shorter.length(); i++) {
-				// TODO finish code here for checking strings with a difference of 1
+				if(shorter.charAt(i) == longer.charAt(i + diff)) {
+					continue;
+				}
+				else {
+					if(shorter.charAt(i) == longer.charAt(i + diff + 1)) {
+						if (++diff > 2) {
+							return false;
+						}
+						continue;
+					}
+					else if(shorter.charAt(i) == longer.charAt(i + diff + 2)) {
+						diff += 2;
+						if (diff > 2) {
+							return false;
+						}
+						continue;
+					}
+					else {
+						if (++charChanges > 1) {
+							return false;
+						}
+						continue;
+					}
+				}
 			}
 			return true;
 		}
