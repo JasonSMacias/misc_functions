@@ -58,11 +58,14 @@ public class Driver {
 		System.out.println("-------- Q1.5 ----------");
 		System.out.println();
 		String[] arr1 = {"", "j", "jason", "ignatius", "heo", "hex", "heo", 
-				"check","check", "chek", "check", "check"};
+				"check","check", "chek", "check", "check", "howareyou?", "test", "sparta",
+				"jason", "whatsup", "bluejay", "harrow", "sparrow"};
 		String[] arr2 = {"", "jjjj", "jxasxon", "inatus", "hello", "hello", "hella", 
-				"chek", "clek", "check", "diek", "dhek"};
+				"chek", "clek", "check", "diek", "dhek", "howersyou!", "test", "spanti",
+				"jasom", "phamsum", "blejayn", "hrrwxv", "sarojnx"};
 		boolean[] expected = {true, false, true, true, true, false, false, 
-				true, true, true, false, true};
+				true, true, true, false, true, false, true, true,
+				true, false, true, false, false, false};
 		for (int i = 0; i < arr1.length; i++) {
 			System.out.print("Testing strings " + i + ", expecting " + expected[i]);
 			System.out.print(":  " + q1_5.oneOrTwoAway(arr1[i], arr2[i]) + "\n");
