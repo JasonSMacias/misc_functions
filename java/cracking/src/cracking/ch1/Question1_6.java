@@ -8,9 +8,9 @@ public class Question1_6 {
 		while(i < s.length()) {
 			char c = s.charAt(i);
 			int numRepChar = 1;
-			INNER: for (int j = i + 1; j < s.length(); j++) {
+			for (int j = i + 1; j < s.length(); j++) {
 				if (j >= s.length() || c != s.charAt(j)) {
-					break INNER;
+					break;
 				}
 				else {
 					numRepChar++;
@@ -21,9 +21,24 @@ public class Question1_6 {
 		}
 		String retStr = sb.toString();
 		// returning original string in case where new string is no shorter than input
-		if (retStr.length() == s.length()) {
-			return s;
+		
+		return retStr.length() < s.length() ? retStr : s;
+	}
+	
+	public String compressStringBookSolution(String str) {
+		/*This is the book's solution, basically the same as mine, but implemented
+		 * slightly differntly*/
+		StringBuilder compressed = new StringBuilder();
+		int countConsecutive = 0;
+		for (int i = 0; i < str.length(); i++) {
+			countConsecutive++;
+			// if next char is different than current, append this char to result
+			if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
+				compressed.append(str.charAt(i));
+				compressed.append(countConsecutive);
+				countConsecutive = 0;
+			}
 		}
-		return retStr;
+		return compressed.length() < str.length() ? compressed.toString() : str;
 	}
 }
