@@ -8,6 +8,7 @@ public class Driver {
 	private static Question1_3 q1_3 = new Question1_3();
 	private static Question1_4 q1_4 = new Question1_4();
 	private static Question1_5 q1_5 = new Question1_5();
+	private static Question1_6 q1_6 = new Question1_6();
 	
 	public static void main(String[] args) {
 		// Question 1.1
@@ -70,6 +71,18 @@ public class Driver {
 			System.out.print("Testing strings " + i + ", expecting " + expected[i]);
 			System.out.print(":  " + q1_5.oneOrTwoAway(arr1[i], arr2[i]) + "\n");
 			System.out.println(arr1[i] + " - " + arr2[i]);
+		}
+		
+		// Question 1.6
+		System.out.println("-------- Q1.6 ----------");
+		System.out.println();
+		String[] inputs = {"s", "ssss", "sssyyy", "syyyzzz", "pppppppppppppppppppp",
+				"ppxxzzaa", "ppxxxzzaa"};
+		String[] expected2 = {"s", "s4", "s3y3", "sy3z3", "p20",
+				"ppxzzaa", "p2x3z2a2"};
+		for (int i = 0; i < inputs.length; i++) {
+			System.out.println("Testing string #" + (i + 1) + ", " + inputs[i] + " expecting " + expected2[i]);
+			System.out.println("\t"+ q1_6.compressString(inputs[i]));
 		}
 	}
 
