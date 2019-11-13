@@ -9,6 +9,8 @@ public class Driver {
 	private static Question1_4 q1_4 = new Question1_4();
 	private static Question1_5 q1_5 = new Question1_5();
 	private static Question1_6 q1_6 = new Question1_6();
+	private static Question1_7 q1_7 = new Question1_7();
+	private static Question1_8 q1_8 = new Question1_8();
 	
 	public static void main(String[] args) {
 		// Question 1.1
@@ -84,6 +86,45 @@ public class Driver {
 			System.out.println("Testing string #" + (i + 1) + ", " + inputs[i] + " expecting " + expected2[i]);
 			System.out.println("\t"+ q1_6.compressString(inputs[i]));
 		}
+		
+		// Question 1.7
+		System.out.println("-------- Q1.7 ----------");
+		System.out.println();
+		byte[][] matrix1 = q1_7.createMatrix(5);
+		byte[][] matrix2 = q1_7.createMatrix(9);
+		byte[][] returned1 = q1_7.rotateMatrix(matrix1);
+		byte[][] returned1a = q1_7.rotateMatrix(returned1);
+		q1_7.printMatrix(matrix1);
+		q1_7.printMatrix(returned1);
+		q1_7.printMatrix(returned1a);
+		q1_7.printMatrix(q1_7.rotateMatrix(returned1a));
+		q1_7.printMatrix(matrix2);
+//		q1_7.printMatrix(returned2);
+		boolean returned2 = q1_7.rotateMatrixBook(matrix2);
+		System.out.println(returned2);
+		q1_7.printMatrix(matrix2);
+		
+		// Question 1.8
+		System.out.println("-------- Q1.8 ----------");
+		System.out.println();
+		int[][] testMatrix = q1_8.createTestMatrix();
+		System.out.println("Test matrix:");
+		q1_8.printMatrix(testMatrix);
+		q1_8.zeroMatrix(testMatrix);
+		System.out.println("Test matrix returned:");
+		q1_8.printMatrix(testMatrix);
+		int[][] rand5Matrix = q1_8.createRandomMatrix(5);
+		System.out.println("Random matrix of size 5:");
+		q1_8.printMatrix(rand5Matrix);
+		q1_8.zeroMatrix(rand5Matrix);
+		System.out.println("Random matrix of size 5 returned:");
+		q1_8.printMatrix(rand5Matrix);
+		int[][] rand9Matrix = q1_8.createRandomMatrix(9);
+		System.out.println("Random matrix of size 9:");
+		q1_8.printMatrix(rand9Matrix);
+		q1_8.zeroMatrix(rand9Matrix);
+		System.out.println("Random matrix of size 9 returned:");
+		q1_8.printMatrix(rand9Matrix);
 	}
 
 }
