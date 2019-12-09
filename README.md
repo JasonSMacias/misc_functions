@@ -3,3 +3,4 @@
 
 ## Including functions from:
   * Cracking the Coding Interview
+  * Structure and Interpretation of Computer Programs
