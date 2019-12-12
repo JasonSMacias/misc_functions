@@ -1,5 +1,5 @@
 #lang planet neil/sicp
-; Exercises from sicp chapter 1
+; Exercises from sicp chapter 1.1
 "1.2"
 "-----------------------------"
 (+ 5 4 (- 2(- 3 (+ 6 (/ 4 5)))))
@@ -67,25 +67,3 @@
 "output of cube root of 27"
 (croot 27)
 ""
-
-"1.11 - create a function f(n) where:"
-"  n if n<3"
-"  f(n-1) + 2f(n-2) + 3f(n-3) if n>=3"
-"-----------------------------"
-""
-"a: write with recursive process"
-(define (get-num x)
-  (cond 
-    ((< x 3) x)
-    ((or (= x 3)(> x 3))
-      (+ (get-num (- x 1))
-         (* 2 (get-num (- x 2)))
-         (* 3 (get-num (- x 3)))))))
-
-"Output of 3"
-(get-num 3)
-"Output of 8"
-(get-num 8)
-
-""
-"b: write with iterative process"
