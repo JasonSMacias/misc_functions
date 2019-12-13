@@ -1,22 +1,24 @@
 #lang planet neil/sicp
 ; Exercises from sicp chapter 1.1
-"1.2"
-"-----------------------------"
-(+ 5 4 (- 2(- 3 (+ 6 (/ 4 5)))))
-""
+(display "1.2") (newline)
+(display "-----------------------------") (newline)
 
-"1.3 - Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers"
-"-----------------------------"
+
+(+ 5 4 (- 2(- 3 (+ 6 (/ 4 5)))))
+(newline)
+
+(display "1.3 - Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers") (newline)
+(display "-----------------------------") (newline)
 (define (largestSquares x y z)
   (cond ((and (> x z) (> y z)) (+ (* x x)(* y y)))
         ((and (> y x) (> z x))(+ (* y y) (* z z)))
         (else (+ (* x x) (* z z)))))
-"Should equal 34:"
+(display "Should equal 34:") (newline)
 (largestSquares 5 2 3)
-""
+(newline)
 
-"1.7 - design a square root method with a better test for when the result is close enough than the one given in the book example, that will work better for very small and very large numbers"
-"-----------------------------"
+(display "1.7 - design a square root method with a better test for when the result is close enough than the one given in the book example, that will work better for very small and very large numbers")(newline)
+(display"-----------------------------") (newline)
 
 (define (square x) (* x x))
 
@@ -37,12 +39,12 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-"output of sqrt of 9"
+(display "output of sqrt of 9") (newline)
 (sqrt 9)
-""
+(newline)
 
-"1.8 - Use Newton's method for cube roots to create a procedure to approximate the cube root of a number"
-"-----------------------------"
+(display "1.8 - Use Newton's method for cube roots to create a procedure to approximate the cube root of a number") (newline)
+(display "-----------------------------") (newline)
 
 ; (define (square x) (* x x))
 
@@ -62,8 +64,8 @@
 (define (croot x)
   (croot-iter 1.0 x))
 
-"output of cube root of 8"
+(display "output of cube root of 8") (newline)
 (croot 8)
-"output of cube root of 27"
+(display "output of cube root of 27") (newline)
 (croot 27)
-""
+(newline)
