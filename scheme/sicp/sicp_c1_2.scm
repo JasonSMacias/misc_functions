@@ -52,5 +52,24 @@
 
 (display "value for column 3 row 5, should equal 6:")(newline)
 (triangle-value 3 5)
+(newline)
 
-; Function to display a pascal's triangle of n height
+(display "1.16 - Design a procedure that evolves an iterative exponentiation process that uses successive squaring and uses a logarithmic number of steps.")
+(newline)(display "-----------------------------")(newline)(newline)
+
+; this function uses three parameters a, r, and p, an accumulator that starts at 1, the root, ant the power.  When applied to ar^p, their evaluation remains 
+; constant from one iteration to the next, and returns a at the final iteration.  Instead of a linear function that multiplies a number by itself n time, for
+; O(n) time complexity, this uses successive squaring toproduce the result in O(log n).  Instead of using a recursive process for O(n) space complexity, it
+; uses an iterative one (via a recursive procedure) for O(1).
+
+(define (fast-exp root power)
+  (exp-itr 1 root power))
+(define (exp-itr accumulator root power)
+  (cond ((= power 0)
+         accumulator)
+        ((= (remainder power 2) 0)
+         (exp-itr accumulator (* root root) (/ power 2)))
+        (else (exp-itr (* accumulator root) root (- power 1)))))
+
+(display "value for 5^5, should equal 3125")(newline)
+(fast-exp 5 5)
