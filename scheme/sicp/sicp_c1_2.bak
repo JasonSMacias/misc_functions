@@ -41,7 +41,6 @@
 (get-num-i 8)
 (newline)
 
-(newline)
 (display "1.12 - compute the elements of Pascal's triangle with a recursive process")(newline)
 (display "-----------------------------")(newline)(newline)
 
@@ -55,7 +54,6 @@
 (triangle-value 3 5)
 (newline)
 
-(newline)
 (display "1.16 - Design a procedure that evolves an iterative exponentiation process that uses successive squaring and uses a logarithmic number of steps.")
 (newline)(display "-----------------------------")(newline)(newline)
 
@@ -76,10 +74,9 @@
 (display "value for 5^5, should equal 3125")(newline)
 (fast-exp 5 5)
 
-(newline)
-(display "\n1.17 - Write an implement a function that performs integer multiplication without using the * operator, ")
+(display "Write an implement a function that performs integer multiplication without using the * operator, ")
 (Display "but do it in O(log n) time with the use of \"double\" and \"halve\" functions")
-(display "\n-----------------------------\n\n")
+(newline)(display "-----------------------------")(newline)(newline)
 
 (define (double x) (+ x x))
 (define (halve-even x)
@@ -89,24 +86,4 @@
   (cond ((= (remainder y 2) 0) (mult (double x) (halve-even y)))
         ((= y 1) x)
         (else (+ x(mult x (- y 1))))))
-
-(display "6 x 8:\n")
-(mult 6 8)
-(display "100 x 70:\n")
-(mult 100 70)
-
-(newline)(newline)
-(display "1.18 - use 1.17 and 1.16 as a basis for multiply procedure that uses an iterative process for better space complexity,")
-(display "using previously created \"double\" and \"halve\" procedures.")
-(display "\n-----------------------------\n\n")
-(define (mult-2 x y)
-  (mult-itr 0 x y))
-(define (mult-itr a x y)
-  (cond ((= y 0) a)
-        ((= (remainder y 2) 0) (mult-itr a (double x) (halve-even y)))
-        (else (mult-itr (+ a x) x (- y 1)))))
-
-(display "6 x 8:\n")
-(mult-2 6 8)
-(display "100 x 70:\n")
-(mult-2 100 70)
+(newline)(display "")(newline)
