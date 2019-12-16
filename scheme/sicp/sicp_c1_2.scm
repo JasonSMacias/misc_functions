@@ -73,3 +73,17 @@
 
 (display "value for 5^5, should equal 3125")(newline)
 (fast-exp 5 5)
+
+(display "Write an implement a function that performs integer multiplication without using the * operator, ")
+(Display "but do it in O(log n) time with the use of \"double\" and \"halve\" functions")
+(newline)(display "-----------------------------")(newline)(newline)
+
+(define (double x) (+ x x))
+(define (halve-even x)
+  (/ x 2))
+
+(define (mult x y)
+  (cond ((= (remainder y 2) 0) (mult (double x) (halve-even y)))
+        ((= y 1) x)
+        (else (+ x(mult x (- y 1))))))
+(newline)(display "")(newline)
