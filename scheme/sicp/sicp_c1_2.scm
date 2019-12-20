@@ -110,3 +110,49 @@
 (mult-2 6 8)
 (display "100 x 70:\n")
 (mult-2 100 70)
+
+(newline)(newline)
+(display "1.19 - a procedure to calculate the Fibonacci numbers in a logarithmic number of steps.  Using book-provided
+procedure, filling in the logic to compute \"p\" and \"q\" in cases where count is even")
+(display "\n-----------------------------\n\n")
+
+(define (fib n)
+  (fib-iter 1 0 0 1 n))
+
+(define (square x) (* x x)) 
+
+(define (fib-iter a b p q count)
+  (cond ((= count 0) 
+         b)
+        ((even? count)
+         (fib-iter a
+                   b
+                   ;compute p'
+                   (+ (square p) (square q))
+                   ;compute q'
+                   (+ (* 2 p q) (square q))
+                   (/ count 2)))
+        (else 
+         (fib-iter (+ (* b q) 
+                      (* a q) 
+                      (* a p))
+                   (+ (* b p) 
+                      (* a q))
+                   p
+                   q
+                   (- count 1)))))
+
+; Iterative function to display the fibonacci sequence up to given parameter places
+(define (get-sequence n)
+  (get-s-iter 0 n))
+
+(define (get-s-iter count n)
+  (display (fib count))
+  (display " ")
+  (if (and (= (remainder count 5) 0) (not (= count 0))) (newline))
+  (if (< count (- n 1))
+      (get-s-iter (+ count 1) n)
+      (display "\n")))
+
+(display "Displaying fibonacci sequence up to 25:\n")
+(get-sequence 25)
