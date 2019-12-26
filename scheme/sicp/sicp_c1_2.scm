@@ -156,3 +156,26 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 
 (display "Displaying fibonacci sequence up to 25:\n")
 (get-sequence 25)
+
+(newline)(newline)
+(display "1.21 - use the 'smallest divisor' method given in the book to find the smallest divisor for the numbers 199, 1999, and 19999")
+(display "\n-----------------------------\n\n")
+
+(define (smallest-divisor n)
+  (find-divisor n 2))
+(define (find-divisor n test-divisor)
+  (cond ((> (square test-divisor) n) n)
+        ((divides? test-divisor n) test-divisor)
+        (else (find-divisor n (+ test-divisor 1)))))
+(define (divides? a b) (= (remainder b a) 0))
+
+(display "199 smallest divisor: ")
+(display (smallest-divisor 199))(newline)
+
+(display "1999 smallest divisor: ")
+(display (smallest-divisor 1999))(newline)
+
+(display "19999 smallest divisor: ")
+(display (smallest-divisor 19999))
+
+(newline)(newline)
