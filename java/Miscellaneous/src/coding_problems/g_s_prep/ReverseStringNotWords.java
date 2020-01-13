@@ -1,6 +1,5 @@
 package coding_problems.g_s_prep;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class ReverseStringNotWords {
