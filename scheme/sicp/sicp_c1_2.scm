@@ -179,3 +179,22 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 (display (smallest-divisor 19999))
 
 (newline)(newline)
+(display "1.22 - ")
+(display "\n-----------------------------\n\n")
+
+; prodecure provided by book using (runtime) primitive to compute whether a number is prime, and report how long the computation took
+(define (timed-prime-test n)
+  (newline)
+  (display n)
+  (start-prime-test n (runtime)))
+(define (start-prime-test n start-time)
+  (if (prime? n)
+  (report-prime(- (runtime) start-time))))
+(define (report-prime elapsed-time)
+  (display " *** ")
+  (display elapsed-time))
+
+; checking for prime using smallest divisor test from 1.21
+(define (prime? n)
+  (= n (smallest-divisor n)))
+(timed-prime-test 27644437)
