@@ -161,14 +161,12 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 (display "1.21 - use the 'smallest divisor' method given in the book to find the smallest divisor for the numbers 199, 1999, and 19999")
 (display "\n-----------------------------\n\n")
 
-(define (next-test-divisor num) (if (= num 2) 3 (+ num 2))) ; from 1.23
-
 (define (smallest-divisor n)
   (find-divisor n 2))
 (define (find-divisor n test-divisor)
   (cond ((> (square test-divisor) n) n)
         ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (next-test-divisor test-divisor)))))
+        (else (find-divisor n (+ test-divisor 1)))))
 (define (divides? a b) (= (remainder b a) 0))
 
 (display "199 smallest divisor: ")
@@ -181,7 +179,7 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 (display (smallest-divisor 19999))
 
 (newline)(newline)
-(display "1.22 - Using timed-prime-test to test for finding larger and larger primes")
+(display "1.22 - ")
 (display "\n-----------------------------\n\n")
 
 ; prodecure provided by book using (runtime) primitive to compute whether a number is prime, and report how long the computation took
@@ -200,19 +198,3 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 (define (prime? n)
   (= n (smallest-divisor n)))
 (timed-prime-test 27644437)
-
-; function to check consecutive odd numbers over a given number until the first three primes are found
-(define(find-primes startNum)(if (odd? startNum) (fp-helper (+ startNum 1) 0) (fp-helper startNum 0)))
-(define (fp-helper num primes) (if (= primes 3) (- num 2) (if (timed-prime-test num)(fp-helper (+ num 2) (+ primes 1))(fp-helper (+ num 2) primes))))
-(define (odd? num) (= (remainder num 2) 0))
-
-(newline)
-(find-primes 1000)
-(find-primes 10000)
-(find-primes 100000)
-(find-primes 1000000)
-
-(newline)(newline)
-(display "1.23 - ")
-(display "\n-----------------------------\n\n")
-
