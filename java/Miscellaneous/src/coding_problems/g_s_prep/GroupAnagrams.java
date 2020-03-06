@@ -10,8 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/* 	This is another attempt at an interview question that I ran out of time on, 
- * 	reimplemented using the Stream api as much as possible, for practice */
+
 
 	public class GroupAnagrams {
 		/* 	--------------Instructions----------------
