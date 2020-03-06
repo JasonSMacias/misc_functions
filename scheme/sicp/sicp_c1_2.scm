@@ -213,6 +213,25 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 (find-primes 1000000)
 
 (newline)(newline)
-(display "1.23 - ")
+(display "1.24 - ")
 (display "\n-----------------------------\n\n")
 
+; procedure to compute the exponential of a number modulo another number, per book
+(define (expmod base exp m)
+  (cond [(= exp 0) 1]
+        [(even? exp) 
+          (remainder (square (expmod base (/ exp 2) m)) m)]
+        [else (remainder (* base (expmod base (- exp 1)) m) m)]))
+
+; Fermat prime test from book, tries expmod with random numbers
+(define (fermat-test n)
+  (define (try-it a)
+    (= (expmod a n n) a))
+    (try-it (+ 1 (random (- n 1)))))
+
+; runs the test a given number of times, returns true if it succeeds every attempt
+(define (fast-prime? n times)
+  (cond [(= times 0) true]
+        [(fermat-test n)
+          (fast-prime? n (- times 1))]
+        [else false]))
