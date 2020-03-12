@@ -255,10 +255,16 @@ procedure, filling in the logic to compute \"p\" and \"q\" in cases where count 
 
 
 (newline)(newline)
-(display "1.26 - ")
+(display "1.27 - write a procedure that demonstrates that a Carmichael number will fool the Fermat test.")
 (display "\n-----------------------------\n\n")
 
 (define (carmichael-demo n c-num) (define c-num-to-n (fast-exp c-num n)) (= (remainder (- c-num-to-n c-num) n) 0))
+
 (carmichael-demo 7 2) ; not a carmichael
 (carmichael-demo 561 4)
 (prime? 561) ; shows that 561, a non-prime, fools the fermat test, and is a Carmichael number
+
+(newline)(newline)
+(display "1.28 - ")
+(display "\n-----------------------------\n\n")
+
