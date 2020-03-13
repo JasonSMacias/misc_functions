@@ -9,11 +9,10 @@ find the sum of the even-valued terms.*/
 public class Problem2 {
 	
 	public long fibEvensSum(int stopPoint) {
-		long[] arr = new long[] {1, 2};
+		long[] arr = {1, 2};
 		long next = arr[0] + arr[1];
 		long count = 2;
 		while(next <= stopPoint) {
-			System.out.println(next);
 			arr[0] = arr[1];
 			arr[1] = next;
 			next = arr[0] + arr[1];
