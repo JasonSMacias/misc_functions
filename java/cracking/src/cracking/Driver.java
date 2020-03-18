@@ -11,6 +11,7 @@ public class Driver {
 	private static Question1_6 q1_6 = new Question1_6();
 	private static Question1_7 q1_7 = new Question1_7();
 	private static Question1_8 q1_8 = new Question1_8();
+	private static Question1_9 q1_9 = new Question1_9();
 	
 	public static void main(String[] args) {
 		// Question 1.1
@@ -125,6 +126,14 @@ public class Driver {
 		q1_8.zeroMatrix(rand9Matrix);
 		System.out.println("Random matrix of size 9 returned:");
 		q1_8.printMatrix(rand9Matrix);
+		
+		// Question 1.9
+		System.out.println("-------- Q1.8 ----------\n");
+		System.out.println(q1_9.isRotation("waterbottle", "erbottlewat"));
+		System.out.println(q1_9.isRotation("waterbottle", "erbottlewta"));
+		System.out.println("  --  ");
+		System.out.println(q1_9.isRotationAlgo("waterbottle", "erbottlewat"));
+		System.out.println(q1_9.isRotationAlgo("waterbottle", "erbottlewta"));
 	}
 
 }

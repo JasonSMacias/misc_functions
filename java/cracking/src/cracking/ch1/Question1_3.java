@@ -46,6 +46,6 @@ public class Question1_3 {
 			toReturn = new String(sArr);
 		}
 		
-		return toReturn;
+		return toReturn.trim();
 	}
 }
