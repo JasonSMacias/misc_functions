@@ -1,7 +1,7 @@
 package cracking;
 import cracking.ch1.*;
 
-public class Driver {
+public class DriverCh1 {
 	
 	private static Question1_1 q1_1 = new Question1_1();
 	private static Question1_2 q1_2 = new Question1_2();
