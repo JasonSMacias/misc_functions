@@ -43,10 +43,15 @@ public class DriverCh2 {
 							+ q2_2.findKthLast(ll1, 4));
 		System.out.println("finding 5th from end of Java LL O(n) (should be 1):\n" 
 							+ q2_2.findKthLastEff(ll1, 5));
+		System.out.println("finding 6th from end of Java LL Recursive (should be 2):\n" 
+							+ q2_2.findKthLastRecursive(ll1.listIterator(), 6)[0] + "\n");
+		
 		System.out.println("finding 4th from end of my LL (should be 12):\n" 
 							+ mll1.findKthLast(4));
-		System.out.println("finding 5th from end of Java LL O(n) (should be 1):\n" 
+		System.out.println("finding 5th from end of my LL O(n) (should be 1):\n" 
 							+ mll1.findKthLastEff(5));
+		System.out.println("finding 6th from end of my LL Recursive (should be 2):\n" 
+							+ mll1.findKthLastRecursive(6) + "\n");
 	}
 	
 	private static void refreshLists() {

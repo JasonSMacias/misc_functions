@@ -84,6 +84,22 @@ public class MyLinkedList {
 		if(k > listMap.size()) throw new IllegalArgumentException("requested index not within range");
 		return listMap.get(index + 1 - k);
 	}
+	
+	public int findKthLastRecursive(int k) {
+		return findKthLastRecurHelper(head, k)[0];
+	}
+	private Integer[] findKthLastRecurHelper(Node curr, int k) {
+		if (curr == null) {
+			return new Integer[] {null, 0};
+		}
+		int tempVal = curr.data;
+		Integer[] valIndex = findKthLastRecurHelper(curr.next, k);
+		if(valIndex[0] != null) return valIndex;
+		valIndex[1]++;
+		if(k == valIndex[1]) valIndex[0] = tempVal;
+		return valIndex;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[");

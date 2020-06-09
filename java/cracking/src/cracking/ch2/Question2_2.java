@@ -32,4 +32,18 @@ public class Question2_2 {
 		if(k > listMap.size()) throw new IllegalArgumentException("requested index not within range");
 		return listMap.get(index + 1 - k);
 	}
+	
+	// recursive solution
+	public Integer[] findKthLastRecursive(ListIterator<Integer> itr, int k) {
+		if (!itr.hasNext()) {
+			return new Integer[] {null, 0};
+		}
+		Integer[] valIndex;
+		int tempVal = itr.next();
+		valIndex = findKthLastRecursive(itr, k);
+		if(valIndex[0] != null) return valIndex;
+		valIndex[1]++;
+		if(k == valIndex[1]) valIndex[0] = tempVal;
+		return valIndex;
+	}
 }
