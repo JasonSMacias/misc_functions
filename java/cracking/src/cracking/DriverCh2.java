@@ -6,20 +6,19 @@ import cracking.ch2.*;
 
 public class DriverCh2 {
 	private static Question2_1  q2_1 = new Question2_1();
+	private static Question2_2 q2_2 = new Question2_2();
+	
+	private static LinkedList<Integer> ll1;
+	private static LinkedList<Integer> ll2;
+	private static MyLinkedList mll1;
+	private static MyLinkedList mll2;
+	private static MyDoublyLinkedList mdll1;
+	private static MyDoublyLinkedList mdll2;
+	
 	public static void main(String[] args) {
 		// Question 2.1
-		LinkedList<Integer> ll1 = new LinkedList<>(Arrays.asList(1, 4, 6, 9, 2, 1, 12, 4, 0, -1));
-		LinkedList<Integer> ll2 = (LinkedList<Integer>)ll1.clone();
-		MyLinkedList mll1 = new MyLinkedList(ll1.get(0));
-		MyLinkedList mll2 = new MyLinkedList(ll1.get(0));
-		MyDoublyLinkedList mdll1 = new MyDoublyLinkedList(ll1.get(0));
-		MyDoublyLinkedList mdll2 = new MyDoublyLinkedList(ll1.get(0));
-		for (int i = 1; i < ll1.size(); i++) {
-			mll1.addEnd(ll1.get(i));
-			mll2.addEnd(ll1.get(i));
-			mdll1.addEnd(ll1.get(i));
-			mdll2.addEnd(ll1.get(i));
-		}
+		System.out.println(" ======== Q2.1 ========");
+		refreshLists();
 		System.out.println("Original List:\n" + ll1);
 		
 		q2_1.removeDups(ll1);
@@ -34,6 +33,35 @@ public class DriverCh2 {
 		System.out.println("Removing duplicates from my linked list without buffer:\n" + mll2);
 		System.out.println("Removing duplicates from my doubly linked list:\n" + mdll1);
 		System.out.println("Removing duplicates from my doubly linked list without buffer:\n" + mdll2);
+		
+		// Question 2.1
+		System.out.println("\n ======== Q2.1 ========");
+		refreshLists();
+		System.out.println("Original List:\n" + ll1);
+
+		System.out.println("finding 4th from end of Java LL (should be 12):\n" 
+							+ q2_2.findKthLast(ll1, 4));
+		System.out.println("finding 5th from end of Java LL O(n) (should be 1):\n" 
+							+ q2_2.findKthLastEff(ll1, 5));
+		System.out.println("finding 4th from end of my LL (should be 12):\n" 
+							+ mll1.findKthLast(4));
+		System.out.println("finding 5th from end of Java LL O(n) (should be 1):\n" 
+							+ mll1.findKthLastEff(5));
+	}
+	
+	private static void refreshLists() {
+		ll1 = new LinkedList<>(Arrays.asList(1, 4, 6, 9, 2, 1, 12, 4, 0, -1));
+		ll2 = (LinkedList<Integer>)ll1.clone();
+		mll1 = new MyLinkedList(ll1.get(0));
+		mll2 = new MyLinkedList(ll1.get(0));
+		mdll1 = new MyDoublyLinkedList(ll1.get(0));
+		mdll2 = new MyDoublyLinkedList(ll1.get(0));
+		for (int i = 1; i < ll1.size(); i++) {
+			mll1.addEnd(ll1.get(i));
+			mll2.addEnd(ll1.get(i));
+			mdll1.addEnd(ll1.get(i));
+			mdll2.addEnd(ll1.get(i));
+		}
 	}
 
 }

@@ -58,6 +58,32 @@ public class MyLinkedList {
 			pointer1 = pointer1.next;
 		}
 	}
+
+	public int findKthLast(int k) { 
+		Stack<Integer> listStack = new Stack<>();
+		Node curr = head;
+		listStack.push(curr.data);
+		while(curr.next != null) {
+			curr = curr.next;
+			listStack.push(curr.data);
+		}
+		if(k > listStack.size()) throw new IllegalArgumentException("requested index not within range");
+		for(int i = 1; i < k; i++) listStack.pop();
+		return listStack.pop();
+	}
+	
+	public int findKthLastEff(int k) {
+		Map<Integer, Integer> listMap = new HashMap<Integer, Integer>();
+		Node curr = head;
+		int index = 0;
+		listMap.put(++index, curr.data);
+		while(curr.next != null) {
+			curr = curr.next;
+			listMap.put(++index, curr.data);
+		}
+		if(k > listMap.size()) throw new IllegalArgumentException("requested index not within range");
+		return listMap.get(index + 1 - k);
+	}
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[");
