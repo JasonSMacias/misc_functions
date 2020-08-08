@@ -4,7 +4,8 @@ import java.util.*;
 
 public class MyLinkedList {
 	Node head;
-	private class Node {
+	//needs to be public for sending nodes to driver
+	public class Node {
 		Node next;
 		int data;
 		
@@ -98,6 +99,18 @@ public class MyLinkedList {
 		valIndex[1]++;
 		if(k == valIndex[1]) valIndex[0] = tempVal;
 		return valIndex;
+	}
+	
+	public Node getNode(int k) {
+		Node cur = head;
+		while(cur.next != null) {
+			if (cur.data == k) {
+				return cur;
+			}
+			cur = cur.next;
+		}
+		if (cur.data == k) return cur;
+		return null;
 	}
 	
 	@Override

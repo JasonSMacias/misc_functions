@@ -11,7 +11,7 @@ import java.util.Stack;
 //see MyLinkedList method by this name for homemade LinkedList implementation
 public class Question2_2 {
 	
-	// treating java LL as if a simple xsingly linked list, O(n, k)
+	// treating java LL as if a simple singly linked list, O(n, k)
 	public int findKthLast(List<Integer> list, int k) { 
 		Stack<Integer> listStack = new Stack<>();
 		ListIterator<Integer> itr = list.listIterator();

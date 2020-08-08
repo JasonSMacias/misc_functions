@@ -7,6 +7,7 @@ import cracking.ch2.*;
 public class DriverCh2 {
 	private static Question2_1  q2_1 = new Question2_1();
 	private static Question2_2 q2_2 = new Question2_2();
+	private static Question2_3 q2_3 = new Question2_3();
 	
 	private static LinkedList<Integer> ll1;
 	private static LinkedList<Integer> ll2;
@@ -34,8 +35,8 @@ public class DriverCh2 {
 		System.out.println("Removing duplicates from my doubly linked list:\n" + mdll1);
 		System.out.println("Removing duplicates from my doubly linked list without buffer:\n" + mdll2);
 		
-		// Question 2.1
-		System.out.println("\n ======== Q2.1 ========");
+		// Question 2.2
+		System.out.println("\n ======== Q2.2 ========");
 		refreshLists();
 		System.out.println("Original List:\n" + ll1);
 
@@ -52,6 +53,14 @@ public class DriverCh2 {
 							+ mll1.findKthLastEff(5));
 		System.out.println("finding 6th from end of my LL Recursive (should be 2):\n" 
 							+ mll1.findKthLastRecursive(6) + "\n");
+		
+		// Question 2.3
+		System.out.println("\n ======== Q2.3 ========");
+		refreshLists();
+		System.out.println("Original List:\n" + ll1);
+		MyLinkedList.Node node6 = mll1.getNode(6);
+		q2_3.deleteFromMiddle(node6);
+		System.out.println("Removing element 6 from my LL " + mll1);
 	}
 	
 	private static void refreshLists() {
