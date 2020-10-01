@@ -19,5 +19,4 @@ do
         ret_val=$((ret_val + x))
     fi
 done
-echo The result is:
 echo $ret_val
