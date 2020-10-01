@@ -62,15 +62,15 @@ fi
 RKT_RESULT=$(racket ${racket_path})
 BASH_RESULT=$(bash ${bash_script})
 
-printf "\nresult from Racket:"
+printf "\nresult from Racket:\n"
 echo $RKT_RESULT
-echo result from Bash
+echo "result from Bash:"
 echo $BASH_RESULT
 
-if [[ $RKT_RESULT -eq BASH_RESULT ]]; then
+if [[ $RKT_RESULT -eq $BASH_RESULT ]]; then
     printf "\n${GRN}*Results Match*${NC}\n\n"
     exit 0
 
     printf "\n${RED}*Results Do Not Match*${NC}\n\n"
     exit 1
-fi 
+fi
