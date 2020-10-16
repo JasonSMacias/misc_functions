@@ -9,5 +9,5 @@
 (fib-evens-sum 1 2 4000000 2) ;should equal 4613732
 
 ; additional runs to test more values, should equal 44 and 60696 respectively
-(fib-evens-sum 1 2 60 2)
-(fib-evens-sum 1 2 100000 2)
+; (fib-evens-sum 1 2 60 2)
+; (fib-evens-sum 1 2 100000 2)
