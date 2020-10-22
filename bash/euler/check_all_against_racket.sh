@@ -30,6 +30,15 @@ if [[ $? -eq 0 ]]; then
     are_failures=Y
 fi
 
+printf "\nChecking Problem 3:\n"
+bash check_against_racket.sh problem3.sh problem3.rkt
+if [[ $? -eq 0 ]]; then
+    echo Problem 2 passed
+    else
+    echo Problem 2 failed
+    are_failures=Y
+fi
+
 if [[ -z $are_failures ]]; then
     printf "\n==========\n${GRN}All Problems Passed${NC}\n\n"
     else
