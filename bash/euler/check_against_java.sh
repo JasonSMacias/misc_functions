@@ -63,7 +63,9 @@ fi
 
 BASH_RESULT=$(bash "problem${problem_number}.sh")
 cd $java_problems_path
-JAVA_RESULT=$(java problems.Driver ${problem_number})
+# Compile all java problems
+javac -d . Driver.java Problem1.java Problem2.java Problem3.java
+JAVA_RESULT=$(java problems.Driver ${problem_number}) 
 
 printf "\nresult from Java:\n"
 echo $JAVA_RESULT
