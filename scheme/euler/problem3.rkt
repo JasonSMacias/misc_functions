@@ -19,6 +19,6 @@
                         orig-sqrt)]
               [else (getLPF-main num ret-val (+ iteration 1) orig-sqrt)]))))
 
-(getLPF 13195) ; 29
+; (getLPF 13195) ; 29
 (getLPF 600851475143) ; 6857
-(getLPF 27)
+; (getLPF 27)

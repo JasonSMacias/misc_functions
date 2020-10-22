@@ -70,7 +70,7 @@ echo $BASH_RESULT
 if [[ $RKT_RESULT -eq $BASH_RESULT ]]; then
     printf "\n${GRN}*Results Match*${NC}\n\n"
     exit 0
-
+else
     printf "\n${RED}*Results Do Not Match*${NC}\n\n"
     exit 1
 fi

@@ -25,7 +25,7 @@ if [[ -z $1 ]]; then
     else
     problem_number=$1
 fi
-set +u
+set -u
 set +f
 is_bash_input_there=''
 is_java_input_there=''
@@ -63,8 +63,9 @@ fi
 
 BASH_RESULT=$(bash "problem${problem_number}.sh")
 cd $java_problems_path
-# Compile all java problems
-javac -d . Driver.java Problem1.java Problem2.java Problem3.java
+set +f
+javac -d . *.java
+set -f
 JAVA_RESULT=$(java problems.Driver ${problem_number}) 
 
 printf "\nresult from Java:\n"
@@ -75,7 +76,7 @@ echo $BASH_RESULT
 if [[ $JAVA_RESULT -eq $BASH_RESULT ]]; then
     printf "\n${GRN}*Results Match*${NC}\n\n"
     exit 0
-
+else
     printf "\n${RED}*Results Do Not Match*${NC}\n\n"
     exit 1
 fi
