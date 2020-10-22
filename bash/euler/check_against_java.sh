@@ -9,8 +9,6 @@
 #############################################
 set -euf -o pipefail
 
-
-
 GRN='\033[1;32m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
@@ -32,7 +30,7 @@ is_java_input_there=''
 echo "Checking files in java directory:"
 for file in ${java_problems_path}*.java;
 do
-    echo $file
+    # echo $file
     if [[ $(basename ${file}) == "Problem${problem_number}.java" ]]; then
         is_java_input_there=y
         printf "${GRN}*match*${NC}\n"
@@ -43,7 +41,7 @@ done
 echo "Checking files in bash directory:"
 for file in *.sh;
 do
-    echo $file
+    # echo $file
     if [[ $file == "problem${problem_number}.sh" ]]; then
         is_bash_input_there=y
         printf "${GRN}*match*${NC}\n"

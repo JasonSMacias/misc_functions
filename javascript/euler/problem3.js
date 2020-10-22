@@ -25,5 +25,5 @@ const getLPF = (n) => {
   return retVal;
 }
 
-console.log(getLPF(13195)); // 29
+// console.log(getLPF(13195)); // 29
 console.log(getLPF(-1)); // 6857 

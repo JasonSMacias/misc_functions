@@ -3,9 +3,9 @@
 #############################################
 # Author: Jason Macias
 # Version: v1.0.0
-# Date: 10/1/2020
-# Description: Checks all bash result against Racket results
-# Usage: ./check_all_against_racket.sh
+# Date: 10/22/20 
+# Description: Checks all bash result against Javascrip results
+# Usage: ./check_all_against_js.sh
 #############################################
 
 GRN='\033[1;32m'
@@ -13,7 +13,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 printf "\nChecking Problem 1:\n"
-bash check_against_racket.sh problem1.sh problem1.rkt
+./check_against_js.sh 1
 if [[ $? -eq 0 ]]; then
     echo Problem 1 passed
     else
@@ -22,7 +22,7 @@ if [[ $? -eq 0 ]]; then
 fi
 
 printf "\nChecking Problem 2:\n"
-bash check_against_racket.sh problem2.sh problem2.rkt
+./check_against_js.sh 2
 if [[ $? -eq 0 ]]; then
     echo Problem 2 passed
     else
@@ -31,7 +31,7 @@ if [[ $? -eq 0 ]]; then
 fi
 
 printf "\nChecking Problem 3:\n"
-bash check_against_racket.sh problem3.sh problem3.rkt
+./check_against_js.sh 3
 if [[ $? -eq 0 ]]; then
     echo Problem 3 passed
     else

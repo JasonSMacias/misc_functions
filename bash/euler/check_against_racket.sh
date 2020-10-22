@@ -31,7 +31,7 @@ fi
 echo "Checking files in racket directory:"
 for file in ../../scheme/euler/*.rkt;
 do
-    echo $file
+    # echo $file
     if [[ $file == $racket_path ]]; then
         is_racket_input_there=y
         printf "${GRN}*match*${NC}\n"
@@ -42,7 +42,7 @@ done
 echo "Checking files in bash directory:"
 for file in *.sh;
 do
-    echo $file
+    # echo $file
     if [[ $file == $bash_script ]]; then
         is_bash_input_there=y
         printf "${GRN}*match*${NC}\n"

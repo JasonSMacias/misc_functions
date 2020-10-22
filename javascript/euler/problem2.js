@@ -18,4 +18,4 @@ function fibEvensSum(stopPoint) {
 }
 
 console.log(fibEvensSum(4000000));
-console.log(fibEvensSum(60));
+// console.log(fibEvensSum(60));
