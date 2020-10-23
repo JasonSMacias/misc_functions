@@ -25,6 +25,10 @@ public class Driver {
         Problem3 prob3 = new Problem3();
         System.out.println(prob3.getLPF(-1));
         break;
+      case "4":
+        Problem4 prob4 = new Problem4();
+        System.out.println(prob4.findLargestPalidrome());
+        break;
       default:
         System.out.println("There is not problem corresponding to the argument supplied");
         System.exit(1);
