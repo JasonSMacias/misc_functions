@@ -21,13 +21,13 @@
                    (+ first-num 1) 
                    last-num 
                    first-num 
-                   (if (is-palindrome? product) product largest-palindrome))]
+                   (if (is-palindrome? product) (max product largest-palindrome) largest-palindrome))]
                [else
                  (find-lp-main 
                    first-num 
                    last-num 
                    (+ curr-num 1) 
-                   (if (is-palindrome? product) product largest-palindrome ))])))
+                   (if (is-palindrome? product) (max product largest-palindrome) largest-palindrome ))])))
 (find-largest-palindrome 10 99) ; 9009
 (find-largest-palindrome 100 999) ;
 ; PROBLEM WITH SOME RESULTS
