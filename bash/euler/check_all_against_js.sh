@@ -39,6 +39,15 @@ if [[ $? -eq 0 ]]; then
     are_failures=Y
 fi
 
+printf "\nChecking Problem 4:\n"
+./check_against_js.sh 4
+if [[ $? -eq 0 ]]; then
+    echo Problem 4 passed
+    else
+    echo Problem 4 failed
+    are_failures=Y
+fi
+
 if [[ -z $are_failures ]]; then
     printf "\n==========\n${GRN}All Problems Passed${NC}\n\n"
     else

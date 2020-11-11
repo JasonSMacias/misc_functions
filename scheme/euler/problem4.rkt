@@ -28,5 +28,5 @@
                    last-num 
                    (+ curr-num 1) 
                    (if (is-palindrome? product) (max product largest-palindrome) largest-palindrome ))])))
-(find-largest-palindrome 10 99) ; 9009
+; (find-largest-palindrome 10 99) ; 9009
 (find-largest-palindrome 100 999) ;
