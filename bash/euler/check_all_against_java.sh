@@ -53,3 +53,11 @@ if [[ -z $are_failures ]]; then
     else
     printf "\n==========\n${RED}Some Problems Failed${NC}\n\n"
 fi
+
+read -p "Would you like to remove compiled Java files? Y/n: " remove_files
+if [[ ${remove_files^} == 'Y' ]]; then
+  cd ../../java/euler/
+  rm -rf problems && echo 'Java class files removed'
+else
+  echo 'Leaving Java class files'
+fi
