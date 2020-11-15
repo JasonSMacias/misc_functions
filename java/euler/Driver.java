@@ -29,8 +29,12 @@ public class Driver {
         Problem4 prob4 = new Problem4();
         System.out.println(prob4.findLargestPalidrome());
         break;
+      case "5":
+        Problem5 prob5 = new Problem5();
+        System.out.println(prob5.getSmallestDivisibleBy1to20());
+        break;
       default:
-        System.out.println("There is not problem corresponding to the argument supplied");
+        System.out.println("There is not a problem corresponding to the argument supplied");
         System.exit(1);
     }    
   }
