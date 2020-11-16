@@ -31,7 +31,7 @@ public class Driver {
         break;
       case "5":
         Problem5 prob5 = new Problem5();
-        System.out.println(prob5.getSmallestDivisibleBy1to20());
+        System.out.println(prob5.getSmallestDivisibleBy1to20UsingPrimeFactors());
         break;
       default:
         System.out.println("There is not a problem corresponding to the argument supplied");
