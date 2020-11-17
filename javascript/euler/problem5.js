@@ -27,7 +27,6 @@ const getSmallestDivisibleBy1to20UsingPrimeFactors = () => {
         if (!freqMap.has(2) || freqMap.get(2) < count2s) {
             freqMap.set(2, count2s);
         }
-        console.log(i + " -- " + n);
         for (let x = 3; x <= Math.sqrt(n); x += 2) {
           let countXs = 0;
           while (n % x == 0) {
@@ -35,14 +34,12 @@ const getSmallestDivisibleBy1to20UsingPrimeFactors = () => {
             n /= x;        
           }
           if (!freqMap.has(x) == true || freqMap.get(x) < countXs) {
-            console.log("Setting--->" + x + " Countxs: " + countXs)
             freqMap.set(x, countXs);
           }
         }
         if(n > 1) {
           freqMap.set(n, freqMap.has(n) ? freqMap.get(n) : 1);
         }
-        console.log(freqMap);
     }
     let retVal = 1;
     for(let x of freqMap) {
