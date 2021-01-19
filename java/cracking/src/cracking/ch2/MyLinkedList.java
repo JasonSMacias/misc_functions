@@ -101,6 +101,41 @@ public class MyLinkedList {
 		return valIndex;
 	}
 	
+	public void partitionList(int divider) {
+		// Node that will mark the second partition of the list
+		if (head.data >= divider) {
+			Node tempRunner = head;
+			Node runnerPrevious = null;
+			while (tempRunner.data >= divider) {
+				if (tempRunner.next == null) return;
+				runnerPrevious = tempRunner;
+				tempRunner = tempRunner.next;
+			}
+			runnerPrevious.next = tempRunner.next;
+			tempRunner.next = head;
+			head = tempRunner;
+		}
+		Node lastLower = head;
+		Node runner = lastLower;
+		while (runner.data < divider) {
+			System.out.println("Made it out ");
+			lastLower = runner;
+			runner = runner.next;
+			if (runner == null) return;
+		}
+		OUTER: while (runner.next != null) {
+			while (runner.next.data >= divider) {
+				runner = runner.next;
+				if (runner.next == null) break OUTER;
+			}
+			Node toMove = runner.next;
+			runner.next = toMove.next;
+			toMove.next = lastLower.next;
+			lastLower.next = toMove;
+		}
+		
+	}
+	
 	public Node getNode(int k) {
 		Node cur = head;
 		while(cur.next != null) {

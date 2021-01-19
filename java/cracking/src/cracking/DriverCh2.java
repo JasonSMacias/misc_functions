@@ -8,6 +8,7 @@ public class DriverCh2 {
 	private static Question2_1  q2_1 = new Question2_1();
 	private static Question2_2 q2_2 = new Question2_2();
 	private static Question2_3 q2_3 = new Question2_3();
+	private static Question2_4 q2_4 = new Question2_4();
 	
 	private static LinkedList<Integer> ll1;
 	private static LinkedList<Integer> ll2;
@@ -61,6 +62,29 @@ public class DriverCh2 {
 		MyLinkedList.Node node6 = mll1.getNode(6);
 		q2_3.deleteFromMiddle(node6);
 		System.out.println("Removing element 6 from my LL " + mll1);
+		
+		// Question 2.4
+		System.out.println("\n ======== Q2.4 ========");
+		refreshLists();
+		System.out.println("Original List:\n" + mll1);
+		System.out.println("\nPartitioning all values >= 2 into second section of list");
+		mll1.partitionList(2);
+		System.out.println("Partitioned list:\n" + mll1);
+		refreshLists();
+		
+		System.out.println("\nPartitioning all values >= 3 into second section of list");
+		mll1.partitionList(3);
+		System.out.println("Partitioned list:\n" + mll1);
+		refreshLists();
+		
+		System.out.println("\nPartitioning all values >= 6 into second section of list");
+		mll1.partitionList(6);
+		System.out.println("Partitioned list:\n" + mll1);
+		refreshLists();
+		
+		System.out.println("\nPartitioning all values >= 0 into second section of list");
+		mll1.partitionList(0);
+		System.out.println("Partitioned list:\n" + mll1);
 	}
 	
 	private static void refreshLists() {
