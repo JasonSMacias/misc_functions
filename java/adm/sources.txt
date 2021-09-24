@@ -1,0 +1,3 @@
+./ch1/exercises/Exercise1.java
+./ch1/exercises/Exercise2.java
+./Driver.java
